@@ -7,11 +7,11 @@ def get_cats_info(path: str) -> list[dict]:
     try:
         with open(path, 'r', encoding="utf-8") as file:
             for line in file.readlines():
-                info_cat = line.split(',')
+                info_cat = line.strip().split(',')
                 curr_dict = {
                     "id": info_cat[0],
                     "name": info_cat[1],
-                    "age": info_cat[2].strip()
+                    "age": info_cat[2]
                 }
                 
                 result.append(curr_dict)
