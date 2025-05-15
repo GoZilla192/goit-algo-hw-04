@@ -9,8 +9,8 @@ def get_cats_info(path: str) -> list[dict]:
             for line in file.readlines():
                 info_cat = line.split(',')
                 curr_dict = {
-                    "id": info_cat[0].strip(),
-                    "name": info_cat[1].strip(),
+                    "id": info_cat[0],
+                    "name": info_cat[1],
                     "age": info_cat[2].strip()
                 }
                 
