@@ -13,11 +13,13 @@ def total_salary(path: str) -> tuple:
                 continue
 
             salary = line.split(',')[1]
-            total_salary += int(salary)
+            total_salary += float(salary)
             total_employee += 1
 
-
-        return (total_salary, total_salary / total_employee) 
+        if total_employee != 0:
+            return (total_salary, total_salary / total_employee) 
+        
+        return (total_salary, total_salary) 
     
     except (FileNotFoundError, OSError) as e:
         print(f"Error occurred when opening/reading file: {e}")
